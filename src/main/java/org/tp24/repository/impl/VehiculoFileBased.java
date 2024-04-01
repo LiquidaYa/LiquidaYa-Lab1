@@ -1,7 +1,7 @@
 package org.tp24.repository.impl;
 
 import java.io.IOException;
-import java.math.BigInteger;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -31,12 +31,9 @@ public class VehiculoFileBased implements VehiculosRepository {
 
     private Vehiculo build(String text) {
         String[] VehiculoArray = text.split(",");
-        //String placa = VehiculoArray[0];
-        BigInteger responsable = new BigInteger(VehiculoArray[1]);
-        //String empresa = VehiculoArray[2];
-        //String marca = VehiculoArray[3];
+        
   
-        return new Vehiculo(VehiculoArray[0], responsable, VehiculoArray[2], VehiculoArray [3]);
+        return new Vehiculo(VehiculoArray[0], VehiculoArray[1], VehiculoArray[2], VehiculoArray [3]);
     }
 
     @Override
