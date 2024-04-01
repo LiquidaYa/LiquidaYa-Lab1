@@ -15,15 +15,22 @@ public class ApplicationRunner {
     
     private static final Logger logger = LoggerFactory.getLogger(ApplicationRunner.class);
 
-    public static void main(String[] args) {
+    public void main() {
         VehiculoServiceImpl vehiculoService = new VehiculoServiceImpl(new VehiculoFileBased());
         List<Vehiculo> vehicles = vehiculoService.getAll();
-        System.out.println(vehicles);
-
-
-
+        //System.out.println(vehicles);
+        logger.info("vehiculos: {}",vehicles);
+      
 
     }
-
-
+    public void agregarVehiculoAlArchivo(Vehiculo vehiculo) {
+      
+        VehiculoServiceImpl vehiculoService = new VehiculoServiceImpl(new VehiculoFileBased());
+        try {
+            vehiculoService.agregarVehiculoAlArchivo(vehiculo);
+        } catch (Exception e) {
+            logger.error("Error al agregar vehiculo", e);
+        }
+    }
+    
 }
