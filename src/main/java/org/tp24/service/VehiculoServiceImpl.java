@@ -6,7 +6,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
-import java.util.Scanner;
 
 import org.tp24.data.Vehiculo;
 import org.tp24.excepcion.ListaVehiculoExeption;
