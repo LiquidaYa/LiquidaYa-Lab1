@@ -1,4 +1,5 @@
 package org.tp24.service;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -22,12 +23,22 @@ public class VehiculoServiceImpl {
     public List<Vehiculo> getAll() {
         return interfacevehiculo.getAll();
     }
-    public Vehiculo buscarPorPlaca(String placa){
-      var vehicle = interfacevehiculo.buscar(placa);
-       if (vehicle == null) {
-            throw new PlacaExeption(placa);
+    public Vehiculo buscarPorPlaca(String placa) {
+        Path path = Paths.get("./src/main/resources/VehiculosBD.txt");
+        String line = null;
+        
+        try (BufferedReader reader = Files.newBufferedReader(path)) {
+            while ((line = reader.readLine())!= null) {
+                String[] values = line.split(",");
+                if (values[0].equals(placa)) {
+                    return new Vehiculo(values[0], values[1], values[2], values[3]);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return vehicle;
+
+        throw new PlacaExeption(placa);
     }
     public List<Vehiculo> buscarPorResponsableEmpresa(String responsable, String empresa){
         var vehicles = interfacevehiculo.buscar(responsable, empresa);

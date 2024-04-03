@@ -10,9 +10,10 @@ public class test {
 
     public void test1() {
         ApplicationRunner applicationRunner = new ApplicationRunner();
-        Vehiculo carro = new Vehiculo("TRC913", "3334445566", "SALOGA","KENWORTH");
-        applicationRunner.agregarVehiculoAlArchivo(carro);
-        applicationRunner.main();
+        //Vehiculo carro = new Vehiculo("TRC913", "3334445566", "SALOGA","KENWORTH");
+        //applicationRunner.agregarVehiculoAlArchivo(carro);
+        applicationRunner.buscarPorPlaca("TRC913");
+        //applicationRunner.main();
     }
 
 }
