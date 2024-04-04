@@ -9,4 +9,5 @@ Santiago Avila Mazo
 Brayan Andres Florez Agudelo
 Angel Simon Yepes Jaramillo
 
-![DiagramaClase LiquidaYa v1 drawio (1)](https://github.com/LiquidaYa/LiquidaYa-Lab1/assets/159499404/97839e5d-a3cf-44cb-bec4-dfa758e56583)
+![LiquidaYa v1](https://github.com/LiquidaYa/LiquidaYa-Lab1/assets/159499404/a0df9ab5-418a-4003-904d-9e18600b5275)
+
