@@ -8,4 +8,5 @@ forma en que ya tenemos lo que nos funciona, lo otro lo podemos trabajar de la m
 Santiago Avila Mazo
 Brayan Andres Florez Agudelo
 Angel Simon Yepes Jaramillo
-![Uploading DiagramaClase LiquidaYa v1.drawio (1).png…]()
+
+![DiagramaClase LiquidaYa v1 drawio (1)](https://github.com/LiquidaYa/LiquidaYa-Lab1/assets/159499404/97839e5d-a3cf-44cb-bec4-dfa758e56583)
