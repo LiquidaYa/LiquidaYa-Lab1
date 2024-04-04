@@ -8,3 +8,4 @@ forma en que ya tenemos lo que nos funciona, lo otro lo podemos trabajar de la m
 Santiago Avila Mazo
 Brayan Andres Florez Agudelo
 Angel Simon Yepes Jaramillo
+![Uploading DiagramaClase LiquidaYa v1.drawio (1).png…]()
