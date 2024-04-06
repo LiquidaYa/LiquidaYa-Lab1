@@ -10,7 +10,6 @@ import java.util.List;
 
 import org.tp24.data.Vehiculo;
 import org.tp24.excepcion.ListaVehiculoExeption;
-import org.tp24.excepcion.PlacaExeption;
 import org.tp24.excepcion.ResponsableEmpresaExeption;
 import org.tp24.repository.VehiculosRepository;
 
@@ -24,21 +23,7 @@ public class VehiculoServiceImpl {
         return interfacevehiculo.getAll();
     }
     public Vehiculo buscarPorPlaca(String placa) {
-        Path path = Paths.get("./src/main/resources/VehiculosBD.txt");
-        String line = null;
-        
-        try (BufferedReader reader = Files.newBufferedReader(path)) {
-            while ((line = reader.readLine())!= null) {
-                String[] values = line.split(",");
-                if (values[0].equals(placa)) {
-                    return new Vehiculo(values[0], values[1], values[2], values[3]);
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        throw new PlacaExeption(placa);
+       return interfacevehiculo.buscar(placa);
     }
     public List<Vehiculo> buscarPorResponsableEmpresa(String responsable, String empresa){
         var vehicles = interfacevehiculo.buscar(responsable, empresa);

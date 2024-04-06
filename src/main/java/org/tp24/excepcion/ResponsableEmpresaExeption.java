@@ -1,10 +1,11 @@
 package org.tp24.excepcion;
 
-public class ResponsableEmpresaExeption extends VehiculosExeptions {
+import java.text.MessageFormat;
+
+public class ResponsableEmpresaExeption extends VehiculosException {
     
     public ResponsableEmpresaExeption(String responsable, String empresa) {
-        super("Vehículo cuyo responsable es: "+responsable+" y su empresa es: "+empresa+" no encontrado");
-
+        super(MessageFormat.format("Vehículo cuyo responsable es: {0} y su empresa es: {1} no encontrado",responsable,empresa));
     }
 
 }
