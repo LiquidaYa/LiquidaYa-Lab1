@@ -7,5 +7,5 @@ public interface VehiculosRepository {
     Vehiculo buscar(String placa);
     List<Vehiculo> buscar(String responsable, String empresa);
     List<Vehiculo> getAll();
-
+    Vehiculo agregar(Vehiculo vehiculo);
 }
