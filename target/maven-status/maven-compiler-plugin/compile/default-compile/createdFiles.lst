@@ -1,10 +1,10 @@
-LiquidaYa\service\LiquidaYaService.class
-LiquidaYa\exception\PlateException.class
 LiquidaYa\exception\VehiclesException.class
-LiquidaYa\repository\VehicleRepository.class
 LiquidaYa\exception\ListVehicleException.class
 LiquidaYa\model\Count.class
+LiquidaYa\ApplicationRunner.class
+LiquidaYa\service\LiquidaYaService.class
+LiquidaYa\exception\PlateException.class
+LiquidaYa\repository\VehicleRepository.class
 LiquidaYa\repository\impl\VehicleRepositoryImpl.class
 LiquidaYa\service\impl\LiquidaYaServiceImpl.class
 LiquidaYa\model\Vehicle.class
-LiquidaYa\ApplicationRunner.class
