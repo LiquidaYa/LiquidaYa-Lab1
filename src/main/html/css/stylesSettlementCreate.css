@@ -1,0 +1,102 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #C0F4F5;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+body:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../img/tracto.jpg) no-repeat center center;
+    background-size: cover;
+    opacity: 0.9; 
+    z-index: -1; 
+}
+
+.container {
+    background-color: #5f7c7c;
+    padding: 20px;
+    border-radius: 10px;
+    width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group:nth-child(9) {
+    grid-column: span 2;
+    justify-content: center;
+}
+
+label {
+    color: #fff;
+    width: 100px;
+    white-space: nowrap;
+}
+
+input[type="text"] {
+    padding: 5px;
+    flex-grow: 1;
+    width: calc(100% - 120px);
+    box-sizing: border-box;
+}
+
+.btn-search {
+    padding: 5px 10px;
+    background-color: #d3d3d3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    grid-column: span 2;
+    gap: 10px;
+}
+
+.btn-action {
+    padding: 10px 20px;
+    background-color: #d3d3d3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    flex-grow: 1;
+}
+
+.btn-back {
+    padding: 10px 20px;
+    background-color: #d3d3d3;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.btn-action:hover, .btn-search:hover, .btn-back:hover {
+    background-color: #888;
+}

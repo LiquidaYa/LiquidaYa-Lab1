@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Vehículos</title>
+    <link rel="stylesheet" href="css/stylesVehicleList.css">
+</head>
+<body>
+    <div class="container">
+        <table class="custom-table" id="vehicles_table">
+            <thead>
+                <tr>
+                    <th>Placa</th>
+                    <th>Responsable</th>
+                    <th>Marca</th>
+                    <th>Empresa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Las filas serán añadidas dinámicamente aquí -->
+            </tbody>
+        </table>
+        <div class="button-container">
+            <a href="vehicles.html" class="btn-back">Regresar</a>
+        </div>
+    </div>
+
+    <script>
+        async function fetchVehicles() {
+            try {
+                const response = await fetch('http://localhost:8080/vehiculos');
+                if (response.ok) {
+                    const vehicles = await response.json();
+                    const tableBody = document.getElementById('vehicles_table').getElementsByTagName('tbody')[0];
+                    vehicles.forEach(vehicle => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${vehicle.plate}</td>
+                            <td>${vehicle.responsible}</td>
+                            <td>${vehicle.mark}</td>
+                            <td>${vehicle.company}</td>
+                        `;
+                        tableBody.appendChild(row);
+                    });
+                } else {
+                    console.error('Error al obtener los vehículos:', response.statusText);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        // Llama a la función fetchVehicles cuando la página se haya cargado completamente
+        document.addEventListener('DOMContentLoaded', fetchVehicles);
+    </script>
+</body>
+</html>

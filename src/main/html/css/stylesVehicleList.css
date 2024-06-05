@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #C0F4F5;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+body:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../img/tracto.jpg) no-repeat center center;
+    background-size: cover;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.container {
+    background-color: #5f7c7c;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    z-index: 1;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 1em;
+    min-width: 400px;
+    background-color: #3b3b3b;
+    color: #ffffff;
+}
+
+.custom-table thead tr {
+    background-color: #d3d3d3;
+    color: #000000;
+    text-align: left;
+    font-weight: bold;
+}
+
+.custom-table th, .custom-table td {
+    padding: 12px 15px;
+    border: 1px solid #555555;
+}
+
+.custom-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.custom-table tbody tr:nth-of-type(even) {
+    background-color: #2e2e2e;
+}
+
+.custom-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #d3d3d3;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-back:hover {
+    background-color: #888;
+}

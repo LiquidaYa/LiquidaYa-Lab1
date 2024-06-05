@@ -1,0 +1,67 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    position: relative;
+    background: #C0F4F5;
+}
+
+body:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../img/tracto.jpg) no-repeat center center;
+    background-size: cover;
+    opacity: 0.8;
+    z-index: 0;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -50px; 
+    background-color: transparent;
+    z-index: 1;
+}
+
+.menu-header {
+    color: #000;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.menu {
+    background-color: #d3d3d3;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.menu-item {
+    display: block;
+    background-color: #a9a9a9;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none; 
+    width: 200px; 
+    box-sizing: border-box; 
+}
+
+.menu-item:hover {
+    background-color: #888;
+}

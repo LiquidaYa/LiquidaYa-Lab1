@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Vehículos</title>
+    <link rel="stylesheet" href="css/stylesVehiclesCreate.css">
+</head>
+<body>
+    <div class="container">
+        <form class="form" id="vehicleForm">
+            <div class="form-group">
+                <label for="plate">Placa</label>
+                <input type="text" id="plate" name="plate" required>
+            </div>
+            <div class="form-group">
+                <label for="responsible">Responsable</label>
+                <input type="text" id="responsible" name="responsible" required>
+            </div>
+            <div class="form-group">
+                <label for="company">Empresa</label>
+                <input type="text" id="company" name="company" required>
+            </div>
+            <div class="form-group">
+                <label for="mark">Marca</label>
+                <input type="text" id="mark" name="mark" required>
+            </div>
+            <div class="form-group actions">
+                <input type="button" value="Guardar" class="btn-action" onclick="registerVehicle()">
+                <input type="button" value="Buscar" class="btn-action" onclick="searchVehicle()">
+                <a href="vehicles.html" class="btn-back">Regresar</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        async function registerVehicle() {
+            const form = document.getElementById('vehicleForm');
+            const formData = new FormData(form);
+
+            const vehicle = {
+                plate: formData.get('plate'),
+                responsible: formData.get('responsible'),
+                company: formData.get('company'),
+                mark: formData.get('mark')
+            };
+
+            try {
+                const response = await fetch('http://localhost:8080/vehiculos', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(vehicle)
+                });
+
+                if (response.ok) {
+                    alert('Vehículo registrado con éxito');
+                    form.reset();
+                } else {
+                    alert('Error al registrar el vehículo');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al registrar el vehículo');
+            }
+        }
+
+        async function searchVehicle() {
+            const plate = document.getElementById('plate').value;
+
+            if (!plate) {
+                alert('Por favor, ingrese una placa para buscar.');
+                return;
+            }
+
+            try {
+                const response = await fetch(`http://localhost:8080/vehiculos/${plate}`);
+
+                if (response.ok) {
+                    const vehicles = await response.json();
+                    if (vehicles.length > 0) {
+                        const vehicle = vehicles[0];
+                        document.getElementById('responsible').value = vehicle.responsible;
+                        document.getElementById('company').value = vehicle.company;
+                        document.getElementById('mark').value = vehicle.mark;
+                    } else {
+                        alert('No se encontró ningún vehículo con esa placa.');
+                    }
+                } else {
+                    alert('Error al buscar el vehículo.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al buscar el vehículo.');
+            }
+        }
+    </script>
+</body>
+</html>
